@@ -88,7 +88,7 @@ void Talkie::say(uint8_t* addr) {
 		TCCR1A = 0;
 		TCCR1B = _BV(WGM12) | _BV(CS10);
 		TCNT1 = 0;
-		OCR1A = F_CPU / FS;
+		OCR1A = F_CPU / FS - 1;
 		TIMSK1 = _BV(OCIE1A);
 
 		setup = 1;
